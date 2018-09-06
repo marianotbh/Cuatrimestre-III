@@ -1,0 +1,58 @@
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+thead {
+    background-color:lightcoral;
+    font-weight:bold;
+    color:white;
+}
+th {
+    padding:10px;
+}
+tbody tr:nth-child(even) {
+    background-color:lightcoral;
+    color:white
+}
+td {
+    padding:5px;
+}
+tbody tr:nth-child(odd) {
+    background-color:white;
+    color:lightcoral;
+}
+
+form {
+    width:250px;
+    background-color:white;
+    position:relative;
+}
+form input {
+    display:block;
+    width:200px;
+    padding:5px;
+    margin:0;
+}
+form input + input {
+    margin-top:5px
+}
+button#close {
+    width:20px;
+    height:15px;
+    font-size:10px;
+    font-weight:bold;
+    padding:0;
+    border:0;
+    color:white;
+    background-color:red;
+    position:absolute;
+    top:0;
+    right:10px;
+}
+
+.hidden {
+    display:none;
+}
+.shown {
+    display:block;
+}

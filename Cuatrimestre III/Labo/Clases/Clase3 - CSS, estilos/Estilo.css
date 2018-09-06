@@ -1,0 +1,36 @@
+
+* {
+    box-sizing:border-box;
+}
+nav {
+    border:5px solid red;
+    position:absolute;
+    left:0;
+    padding:0 20px ;
+}
+.wrap {
+    display:inline-block;
+    margin-left:210px;
+}
+.wrap section {
+    background-color:white;
+    border:5px solid yellow;
+    overflow:auto;
+}
+.wrap section img {
+    float:right;
+    width:150px;
+    height:150px;
+    border:1px solid gray;
+    margin:5px;
+}
+footer {
+    width:100%;
+    bottom:20px;
+    left:0;
+    border:5px solid red;
+    position:fixed;
+}
+.clear {
+    clear:both;
+}

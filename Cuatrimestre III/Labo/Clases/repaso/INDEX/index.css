@@ -1,0 +1,151 @@
+@media only screen and (min-width: 600px) {
+    #container {
+        width:600px;
+        margin:auto;
+    }
+    article + article {
+        margin-top:20px;
+    }
+    nav#icon {
+        float:left;
+        margin:20px;
+    }
+    nav#controls {
+        border-radius:4px;
+        display:inline-block;
+    }
+    nav#controls div + div {
+        border-left:1px solid #ef7f1a;
+        margin-left: 5px;
+        padding-left: 5px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    nav#icon {
+        display:block;
+        float:none;
+        margin:auto;
+    }
+    header {
+        padding-top:20px;
+    }
+    #container {
+        width:100%;
+    }
+    article + article {
+        margin-top:10px;
+    }
+    nav#controls {
+        width:100%;
+        border-radius:0;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+    }
+    
+}
+
+header {
+    background:url("https://pbs.twimg.com/profile_banners/725478486907965440/1461870528/1500x500") no-repeat fixed;
+    background-size:cover;
+    min-height:178px;
+}
+nav#icon {
+    font-size:0;
+    background-color:white;
+    width:100px;
+    padding:20px;
+    border-radius:4px;
+}
+nav#icon img {
+    width:100%;
+}
+nav#controls {
+    box-sizing: border-box;
+    background-color:white;
+    padding:15px;
+    margin-top:20px;
+    
+}
+nav#controls * {
+    background:none !important;
+    color:#ef7f1a !important;
+    font-weight:bold;
+}
+nav#controls div{
+    display:inline-block;
+}
+
+
+
+
+
+
+
+
+#container {
+    margin-top:20px;
+}
+article {
+    line-height:1.5em;
+    background-color:white;
+    width:100%;
+    padding:15px 20px;
+    border-radius:3px;
+    box-sizing:border-box;
+}
+article > * + * {
+    margin-top:15px !important;
+}
+
+
+#newPostForm {
+    background-color:white;
+    padding:15px 20px;
+    width:500px;
+    border-radius:4px;
+    box-sizing:border-box;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:99;
+}
+#newPostForm > * {
+    width:100%;
+    box-sizing: border-box;
+}
+#newPostForm > * + * {
+    margin-top:5px;
+}
+input#texttitle,
+article h2 {
+    font-size:30px !important;
+    font-weight:bold;
+}
+input#textheader,
+article h4 {
+    font-style:italic;
+    font-size:20px !important;
+    font-weight:normal;
+}
+#newPostForm input:focus,
+#newPostForm #posttext:focus {
+    outline:none;
+}
+#posttext {
+    border:none;
+    padding:0;
+    height:100px;
+    resize: none;
+}
+#postPostBtn,
+#cancelBtn {
+    width:auto;
+    margin-top:30px;
+    padding:10px;
+}
+#cancelBtn {
+    float:right;
+    background-color:#b3b3b3;
+}

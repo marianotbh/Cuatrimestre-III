@@ -1,0 +1,156 @@
+@media only screen and (min-width: 600px) {
+    #container {
+        width:600px;
+        margin:auto;
+    }
+    nav#icon {
+        float:left;
+        margin:20px;
+    }
+    nav#controls {
+        border-radius:4px;
+        display:inline-block;
+    }
+    nav#controls div + div {
+        border-left:1px solid #ef7f1a;
+        margin-left: 5px;
+        padding-left: 5px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    nav#icon {
+        display:block;
+        float:none;
+        margin:auto;
+    }
+    header {
+        padding-top:20px;
+    }
+    #container {
+        width:100%;
+    }
+    
+    nav#controls {
+        width:100%;
+        border-radius:0;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+    }
+    
+}
+
+header {
+    background:url("https://pbs.twimg.com/profile_banners/725478486907965440/1461870528/1500x500") no-repeat fixed;
+    background-size:cover;
+    min-height:178px;
+}
+nav#icon {
+    font-size:0;
+    background-color:white;
+    width:100px;
+    padding:20px;
+    border-radius:4px;
+}
+nav#icon img {
+    width:100%;
+}
+nav#controls {
+    box-sizing: border-box;
+    background-color:white;
+    padding:15px;
+    margin-top:20px;
+    
+}
+nav#controls * {
+    background:none !important;
+    color:#ef7f1a !important;
+    font-weight:bold;
+}
+nav#controls div{
+    display:inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    margin:auto;
+    margin-bottom:20px;
+}
+table tr:nth-child(even) {
+    background-color:#eee;
+}
+table tr:nth-child(odd) {
+    background-color:white;
+}
+table thead tr {
+    background-color:black !important;
+    color:white !important;
+}
+table thead th {
+    padding:5px 10px;
+}
+
+#container {
+    margin-top:20px;
+}
+#editNota {
+    background-color:white;
+    padding:15px 20px;
+    width:350px;
+    border-radius:4px;
+    box-sizing:border-box;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:99;
+}
+#editnota input {
+    width:300px;
+    display:inline-block !important;
+}
+#editNota label {
+    width:75px;
+    font-weight:bold !important;
+    text-align:right;
+    display:inline-block
+}
+#confirmBtn,
+#cancelBtn {
+    width:auto;
+    margin-top:30px;
+    padding:10px;
+}
+#cancelBtn {
+    float:right;
+    background-color:#b3b3b3;
+}
+
+#errWindow {
+    background-color:white;
+    padding:20px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:999;
+    box-shadow:0px 0px 5px 2px rgb(189, 189, 189);
+    border-radius:3px;
+}
+#errWindow input {
+    position:absolute;
+    top:0;
+    right:10px;
+    padding:0px 20px 2px;
+    border-radius:0 0 3px 3px;
+    background-color:red;
+}
+#errWindow img {
+    height:30px;
+    margin-right:20px;
+    width:30px;
+    float:left;
+}
+#errWindow h2 {
+    text-transform: uppercase;
+}

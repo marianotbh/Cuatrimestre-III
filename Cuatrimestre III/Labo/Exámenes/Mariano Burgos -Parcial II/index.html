@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/stylesheet.css">
+    <script src="js/Persona.js"></script>
+    <script src="js/Empleado.js"></script>
+    <script src="js/Manejadora.js"></script>
+    <title>Modelo Segundo Parcial</title>
+</head>
+
+<body onload="SP.Manejadora.OnLoad()">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="./img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="glyphicon glyphicon-log-in"></span> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Lista de empleados</h1>
+
+        <hr>
+
+        <div id="listMenu" class="row">
+
+            <div class="input-group col-md-4">
+                <input type="text" id="txtPromedio" class="form-control" name="Promedio" onkeyup="SP.Manejadora.filtrarPorHorario()" readonly>
+                <div class="input-group-append">
+                    <button name="btnEstadisticas" id="btnEstadisticas" class="btn btn-info" onclick="SP.Manejadora.Stats()">Calcular Promedio</button>
+                </div>
+            </div>
+
+            <button id="btnNuevoRegistro" class="btn col-sm-12 col-md-2" onclick="$('form#cargar').show()">+ Nuevo registro</button>
+
+            <div id="filters" class="btn-group col-sm-12 col-md-2">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Filtro por horario
+                </button>
+                <div class="dropdown-menu">
+                    <div class="radio dropdown-item">
+                        <label><input type="radio" name="filtro" id="filtroTodos" checked onchange="SP.Manejadora.Checkbox_OnChange()">Todos</label>
+                    </div>
+                    <div class="radio dropdown-item">
+                        <label><input type="radio" name="filtro" id="filtroManana" onchange="SP.Manejadora.Checkbox_OnChange()">Mañana</label>
+                    </div>
+                    <div class="radio dropdown-item">
+                        <label><input type="radio" name="filtro" id="filtroTarde" onchange="SP.Manejadora.Checkbox_OnChange()">Tarde</label>
+                    </div>
+                    <div class="radio dropdown-item">
+                        <label><input type="radio" name="filtro" id="filtroNoche" onchange="SP.Manejadora.Checkbox_OnChange()">Noche</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-striped" id="tabla">
+
+        </table>
+    </div>
+
+    <form id="cargar" class="row shadow" style="display:none">
+        <div class="form-group col-md-12" id="idGroup">
+            <label for="legajo" class="control-label">Legajo: </label>
+            <input type="number" class="form-control" name="legajo" id="legajo">
+        </div>
+        <div class="form-group col-md-12" id="nombreGroup">
+            <label for="nombre" class="control-label">Nombre: </label>
+            <input type="text" class="form-control" name="nombre" id="nombre" onfocus="$('#nombreGroup').removeClass('has-danger')"
+                onblur="SP.Manejadora.CheckName()">
+            <div id="nmfb" class="invalid-feedback">Nombre contiene caracteres inválidos.</div>
+        </div>
+        <div class="form-group col-md-12" id="apellidoGroup">
+            <label for="apellido" class="control-label">Apellido: </label>
+            <input type="text" class="form-control" name="apellido" id="apellido" onfocus="$('#apellidoGroup').removeClass('has-danger')"
+                onblur="SP.Manejadora.CheckLastName()">
+            <div id="lnfb" class="invalid-feedback">Apellido contiene caracteres inválidos.</div>
+        </div>
+        <div class="form-group col-md-12" id="edadGroup">
+            <label for="edad" class="control-label">Edad: </label>
+            <input type="number" class="form-control" name="edad" id="edad" onfocus="$('#edadGroup').removeClass('has-danger')" onblur="SP.Manejadora.CheckAge()">
+            <div id="agfb" class="invalid-feedback">Edad contiene caracteres inválidos.</div>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="horario" class="control-label">Horario: </label>
+            <select name="horario" class="form-control" id="horario">
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noche">Noche</option>
+            </select>
+        </div>
+        <div class="btn-group col-md-12" role="group" aria-label="Basic example">
+            <button name="Save" class="btn btn-secondary alta" id="btnSave" onclick="SP.Manejadora.CheckBeforeSaving()">Cargar</button>
+            <button name="Cancel" class="btn btn-secondary" id="btnCancel" onclick="SP.Manejadora.ClearForm()">Cancelar</button>
+        </div>
+    </form>
+</body>
+
+</html>

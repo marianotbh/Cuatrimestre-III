@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Clase 1</title>
+
+        <script type="text/javascript">
+            function saludar() {
+                var nombre = $("txtUser").value;
+                var password = $("txtPw").value;
+                if(nombre.length === 0 || password.length === 0)
+                {
+                    alert("Complete todos los campos");
+                }
+                else
+                {
+                    alert("Usuario: " + nombre + "\n" + "Contraseña: " + password);
+                }     
+            } 
+            function $(id) {
+                return document.getElementById(id);
+            }
+        </script>
+        <style>
+            body {
+                background-color:aquamarine;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+            form {
+                text-align:center;
+                width:300px;
+                height:auto;
+                padding:20px;
+                box-sizing:border-box;
+                background-color:white;
+                border-radius:3px;
+                line-height:1.5em;
+                box-shadow:0 0 5px 2px rgba(0,0,0,0.2);
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                position:absolute;
+            }
+            label:not([for=chkBx]){
+                font-size:12px;
+                text-transform:uppercase;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Login</h1>
+            <label for="txtUser">Usuario:</label><br>
+            <input type="text" id="txtUser" name="textoUSR" size="11" maxlength="10" placeholder="Texto">
+            <br>
+            <label for="txtPw">Contraseña:</label><br>
+            <input type="password" id="txtPw" name="textoPW" size="11" maxlength="10" placeholder="Contraseña">
+            <br>
+            <input type="checkbox" id="chkBx" value="1"><label for="chkBx">Recordar usuario y contraseña</label>
+            <br>
+            <input type="button" id="btn" value="Enviar" onclick="saludar()"> 
+            <input type="reset" id="btnReset">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <script src="../script.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../general.css" type="text/css"> 
+    <link rel="stylesheet" href="index.css" type="text/css"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/logo.png"/>
+</head>
+<body>
+    <header>
+        <nav id="icon" class="floating">
+            <img src="../img/logo.png"/>
+        </nav>
+        <nav id="controls" class="floating">
+            <div><input id="btnNewPost" type="button" value="Nueva publicación" onclick="toggleHide('newPostForm')"></div><!--
+            --><div><input type="button" value="Favoritos" onclick="alert('not implemented yet')"></div><!--
+            --><div><input type="button" value="Editar perfil" onclick="alert('not implemented yet')"></div><!--
+            --><div><input type="button" value="Buscar" onclick="alert('not implemented yet')"></div>
+        </nav>
+    </header>    
+    
+    
+    
+    <div id="container">
+        <img id="loadingGif" src="https://www.wallies.com/filebin/images/loading_apple.gif" class="hidden">
+        <form id="newPostForm" class="hidden">
+            <input type="text" id="texttitle" placeholder="Título">
+            <input type="text" id="textheader" placeholder="Encabezado">
+            <textarea id="posttext" placeholder="Cuerpo"></textarea>
+            <input type="button" id="postPostBtn" value="Realizar publicación" onclick="newPost()">
+            <input type="button" id="cancelBtn" value="Cancelar" onclick="toggleHide('newPostForm')">
+        </form>
+        <article class="floating">
+            <p>
+                Parece que no publicaste nada hasta el momento,<br>
+                ¿Quieres crear una publicación nueva?
+            </p>
+        </article>
+    </div>
+</body>
+</html>

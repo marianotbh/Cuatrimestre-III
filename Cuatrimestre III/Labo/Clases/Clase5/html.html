@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <title>Clase 5</title>
+</head>
+<body>
+    <h1>Lista de personas</h1>
+    <input type="button" value="Agregar Persona" id="add" onclick="displayForm()">
+    <form id="formulario" class="hidden">
+        <button id="close" value="x" onclick="displayForm()">x</button>
+        <input type="text" id="txtNombre" placeholder="Nombre">
+        <input type="text" id="txtApellido" placeholder="Apellido">
+        <input type="number" id="telefono" placeholder="Teléfono">
+        <input type="date" id="fecha">
+        <input type="button" value="Guardar" onclick="guardarPersona()"> 
+    </form>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha</th>
+            <th>Telefono</th>
+            <th>Acción</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</body>
+</html>

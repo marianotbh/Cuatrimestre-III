@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log in | UTNFRA</title>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/login.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/general.css" type="text/css">
+    <link rel="stylesheet" href="../css/login.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/logo.png" />
+</head>
+
+<body>
+    <img id="loadingGif" src="https://www.wallies.com/filebin/images/loading_apple.gif" class="hidden">
+    <nav id="icon" class="floating">
+        <img src="../img/logo.png" />
+    </nav>
+    <section class="center">
+        <form id="logIn" class="floating">
+            <div id="img-wrap">
+                <img id="avatar" src="../img/user.png" />
+            </div>
+            <input type="text" id="correo" placeholder="Correo">
+            <input type="password" id="pw" placeholder="Contraseña">
+            <input type="button" id="btnSignIn" value="Iniciar sesión" onclick="login()">
+            <p id="errMsg" class="err"></p>
+            <p id="register">¿No tienes una cuenta?
+                <a href="#">¡Regístrate!</a>
+            </p>
+        </form>
+    </section>
+    <div id="bg">
+        <img src="https://pbs.twimg.com/profile_banners/725478486907965440/1461870528/1500x500">
+    </div>
+    <footer>
+        <div>
+            <a href="#">Condiciones</a>
+        </div>
+        <div>
+            <a href="#">Privacidad</a>
+        </div>
+        <div>
+            <a href="#">Acerca de</a>
+        </div>
+        <div>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+</body>
+
+</html>
